@@ -29,5 +29,4 @@ function createGalleryCardsMarkup(imgs) {
     }).join('');
 };
 
-//
-let galleryImages = new SimpleLightbox('.gallery a'); 
+const galleryImages = new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250,});

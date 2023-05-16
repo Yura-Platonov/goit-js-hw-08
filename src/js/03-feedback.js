@@ -3,8 +3,11 @@ import throttle from 'lodash.throttle';
 
 const STORAGE_KEY = 'feedback-form-state';
 
+const textareaElement = document.querySelector('form textarea');
+
 const refs = {
     form: document.querySelector('.feedback-form'),
+    
 }
 
 // подія введення тексту
@@ -35,6 +38,9 @@ function populateTextarea() {
 refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
+    if (inputElement.value === '' || textareaElement.value === '') {
+        return alert('Fields must be filled in');
+      }
     console.log(formData);
   e.preventDefault();
   e.currentTarget.reset();

@@ -10,7 +10,7 @@ const player = new Player(iframe);
 //Перевірка та встановлення часу відтворення відео
 const setCurrentTime = storage.load(STORAGE_KEY);
 if (setCurrentTime) {
-    player.setCurrentTime(setCurrentTime);
+    player.setCurrentTime(setCurrentTime || 0);
 }
 
 //Збереження часу відтворення
