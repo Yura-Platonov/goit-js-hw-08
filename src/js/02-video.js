@@ -15,7 +15,7 @@ if (setCurrentTime) {
 
 //Збереження часу відтворення
 const throttledFunction = throttle((data) => {
-    storage.save(STORAGE_KEY, data.seconds);;
+    storage.save(STORAGE_KEY, data.seconds);
 }, 1000);
 
 player.on('timeupdate', function(data) {
